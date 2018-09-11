@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bgp_priority_setup** | [**\Swagger\Client\Model\GatewayHandoffValueBgpPrioritySetup**](GatewayHandoffValueBgpPrioritySetup.md) |  | [optional] 
 **type** | **string** |  | [optional] 
 **override** | **bool** |  | [optional] [default to false]
 **c_tag** | **int** |  | [optional] 

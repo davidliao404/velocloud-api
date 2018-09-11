@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **subinterface_id** | **int** |  | [optional] 
 **subinterface_type** | **string** |  | [optional] 
 **vlan_id** | **int** | static only | [optional] 
+**trusted** | **bool** |  | [optional] 
+**rpf** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

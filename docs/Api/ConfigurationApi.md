@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**configurationCloneAndConvertConfiguration**](ConfigurationApi.md#configurationCloneAndConvertConfiguration) | **POST** /configuration/cloneAndConvertConfiguration | Clone and convert a network based profile configuration to segment based profile configuration
 [**configurationCloneConfiguration**](ConfigurationApi.md#configurationCloneConfiguration) | **POST** /configuration/cloneConfiguration | Clone a configuration profile
 [**configurationCloneEnterpriseTemplate**](ConfigurationApi.md#configurationCloneEnterpriseTemplate) | **POST** /configuration/cloneEnterpriseTemplate | Clone the default enterprise configuration profile
 [**configurationDeleteConfiguration**](ConfigurationApi.md#configurationDeleteConfiguration) | **POST** /configuration/deleteConfiguration | Delete a configuration profile
@@ -13,6 +14,55 @@ Method | HTTP request | Description
 [**configurationInsertConfigurationModule**](ConfigurationApi.md#configurationInsertConfigurationModule) | **POST** /configuration/insertConfigurationModule | Insert a new configuration module
 [**configurationUpdateConfigurationModule**](ConfigurationApi.md#configurationUpdateConfigurationModule) | **POST** /configuration/updateConfigurationModule | Update a configuration module
 
+
+# **configurationCloneAndConvertConfiguration**
+> \Swagger\Client\Model\ConfigurationCloneAndConvertConfigurationResult configurationCloneAndConvertConfiguration($body)
+
+Clone and convert a network based profile configuration to segment based profile configuration
+
+Clones an convert existing network configuration by configurationId. Accepts an enterpriseId or networkId to associate the new config with an enterprise or network. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\ConfigurationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration(); // \Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration | 
+
+try {
+    $result = $apiInstance->configurationCloneAndConvertConfiguration($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConfigurationApi->configurationCloneAndConvertConfiguration: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration**](../Model/ConfigurationCloneAndConvertConfiguration.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\ConfigurationCloneAndConvertConfigurationResult**](../Model/ConfigurationCloneAndConvertConfigurationResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **configurationCloneConfiguration**
 > \Swagger\Client\Model\ConfigurationCloneConfigurationResult configurationCloneConfiguration($body)
@@ -68,7 +118,7 @@ No authorization required
 
 Clone the default enterprise configuration profile
 
-Creates a new enterprise configuration from the VCO enterprise default configuration. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
+Creates a new enterprise configuration from the enterprise default configuration. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
 
 ### Example
 ```php
@@ -264,7 +314,7 @@ No authorization required
 
 List applications that are first packet routable
 
-List the applications that are first packet routable. If called from the operator context, an enterprise ID may optionally be specified to filter the result set. Additionally, an edge ID may be specified to get the map for a specific edge.  Privileges required:  `READ` `ENTERPRISE_PROFILE`
+List the applications that are first packet routable. If called from the operator context, an enterprise ID may optionally be specified to filter the result set. Additionally, an edge ID may be specified to get the map for a specific edge.  Privileges required:  `VIEW_FLOW_STATS` `undefined`
 
 ### Example
 ```php

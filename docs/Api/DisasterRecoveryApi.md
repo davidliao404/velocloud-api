@@ -4,22 +4,23 @@ All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disasterRecoveryConfigureActiveForReplication**](DisasterRecoveryApi.md#disasterRecoveryConfigureActiveForReplication) | **POST** /disasterRecovery/configureActiveForReplication | Designate a standby VCO for disaster recovery replication
+[**disasterRecoveryConfigureActiveForReplication**](DisasterRecoveryApi.md#disasterRecoveryConfigureActiveForReplication) | **POST** /disasterRecovery/configureActiveForReplication | Designate a standby Orchestrator for disaster recovery replication
 [**disasterRecoveryDemoteActive**](DisasterRecoveryApi.md#disasterRecoveryDemoteActive) | **POST** /disasterRecovery/demoteActive | Demote current server from active to zombie
-[**disasterRecoveryGetReplicationBlob**](DisasterRecoveryApi.md#disasterRecoveryGetReplicationBlob) | **POST** /disasterRecovery/getReplicationBlob | Get the blob needed to configure VCO replication on the standby
-[**disasterRecoveryGetReplicationStatus**](DisasterRecoveryApi.md#disasterRecoveryGetReplicationStatus) | **POST** /disasterRecovery/getReplicationStatus | Get VCO disaster recovery status
-[**disasterRecoveryPrepareForStandby**](DisasterRecoveryApi.md#disasterRecoveryPrepareForStandby) | **POST** /disasterRecovery/prepareForStandby | Prepare current VCO to be configured as a standby system
+[**disasterRecoveryGetReplicationBlob**](DisasterRecoveryApi.md#disasterRecoveryGetReplicationBlob) | **POST** /disasterRecovery/getReplicationBlob | Get the blob needed to configure replication on the standby
+[**disasterRecoveryGetReplicationStatus**](DisasterRecoveryApi.md#disasterRecoveryGetReplicationStatus) | **POST** /disasterRecovery/getReplicationStatus | Get disaster recovery status
+[**disasterRecoveryPrepareForStandby**](DisasterRecoveryApi.md#disasterRecoveryPrepareForStandby) | **POST** /disasterRecovery/prepareForStandby | Prepare current Orchestrator to be configured as a standby system
 [**disasterRecoveryPromoteStandbyToActive**](DisasterRecoveryApi.md#disasterRecoveryPromoteStandbyToActive) | **POST** /disasterRecovery/promoteStandbyToActive | Promote the current server to take over as the single standalone VCO
-[**disasterRecoveryRemoveStandby**](DisasterRecoveryApi.md#disasterRecoveryRemoveStandby) | **POST** /disasterRecovery/removeStandby | Unconfigure VCO disaster recovery on the current server
-[**disasterRecoveryTransitionToStandby**](DisasterRecoveryApi.md#disasterRecoveryTransitionToStandby) | **POST** /disasterRecovery/transitionToStandby | Configure current VCO to transition to standby in disaster recovery active/standby pair.
+[**disasterRecoveryRemoveStandby**](DisasterRecoveryApi.md#disasterRecoveryRemoveStandby) | **POST** /disasterRecovery/removeStandby | Unconfigure disaster recovery on the current server
+[**disasterRecoveryTransitionToStandby**](DisasterRecoveryApi.md#disasterRecoveryTransitionToStandby) | **POST** /disasterRecovery/transitionToStandby | Configure current Orchestrator to transition to standby in disaster recovery active/standby pair.
+[**vcoInventoryAssociateEdge**](DisasterRecoveryApi.md#vcoInventoryAssociateEdge) | **POST** /vcoInventory/associateEdge | Return inventory items available at this VCO
 
 
 # **disasterRecoveryConfigureActiveForReplication**
 > \Swagger\Client\Model\DisasterRecoveryConfigureActiveForReplicationResult disasterRecoveryConfigureActiveForReplication($body)
 
-Designate a standby VCO for disaster recovery replication
+Designate a standby Orchestrator for disaster recovery replication
 
-Configure the current VCO to be active and the specified VCO to be standby for VCO disaster recovery replication. Required attributes are 1) standbyList, a single-entry array containing the standbyAddress and standbyUuid, 2) drVCOUser, a VCO super user available on both the active and standby VCOs, and 3) drVCOPassword, the password of drVCOUser on the standby VCO (unless the autoConfigStandby option is specified as false). The call sets up the active VCO to allow replication from the standby and then (unless autoConfigStandby is false) makes a transitionToStandby API call to the specified standby, expected to have been previously placed in STANDBY_CANDIDATE state via prepareForStandby.  After this call, the active and standby VCOs should be polled via getReplicationStatus until they  both reach STANDBY_RUNNING drState (or a configuration error is reported).  (Note: the drVCOPassword is not persisted.)  Privileges required:  `CREATE` `REPLICATION`
+Configure the current Orchestrator to be active and the specified Orchestrator to be standby for Orchestrator disaster recovery replication. Required attributes are 1) standbyList, a single-entry array containing the standbyAddress and standbyUuid, 2) drVCOUser, a Orchestrator super user available on both the active and standby VCOs, and 3) drVCOPassword, the password of drVCOUser on the standby Orchestrator (unless the autoConfigStandby option is specified as false). The call sets up the active Orchestrator to allow replication from the standby and then (unless autoConfigStandby is false) makes a transitionToStandby API call to the specified standby, expected to have been previously placed in STANDBY_CANDIDATE state via prepareForStandby.  After this call, the active and standby VCOs should be polled via getReplicationStatus until they  both reach STANDBY_RUNNING drState (or a configuration error is reported).  (Note: the drVCOPassword is not persisted.)  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -115,9 +116,9 @@ No authorization required
 # **disasterRecoveryGetReplicationBlob**
 > \Swagger\Client\Model\DisasterRecoveryGetReplicationBlobResult disasterRecoveryGetReplicationBlob($body)
 
-Get the blob needed to configure VCO replication on the standby
+Get the blob needed to configure replication on the standby
 
-Get from the active VCO the blob needed to configure VCO replication on the standby. Only used when configureActiveForReplication was called with autoConfigStandby set to false [true by default].  Privileges required:  `CREATE` `REPLICATION`
+Get from the active Orchestrator the blob needed to configure replication on the standby. Only used when configureActiveForReplication was called with autoConfigStandby set to false [true by default].  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -164,9 +165,9 @@ No authorization required
 # **disasterRecoveryGetReplicationStatus**
 > \Swagger\Client\Model\DisasterRecoveryGetReplicationStatusResult disasterRecoveryGetReplicationStatus($body)
 
-Get VCO disaster recovery status
+Get disaster recovery status
 
-Get VCO disaster recovery replication status, optionally with client contact, state transition history, and storage information.  No input parameters are required.  Can optionally specify 1 or more of the following with parameters: clientContact,clientCount,stateHistory,storageInfo.  Privileges required:  `READ` `REPLICATION`
+Get disaster recovery replication status, optionally with client contact, state transition history, and storage information.  No input parameters are required.  Can optionally specify 1 or more of the following with parameters: clientContact,clientCount,stateHistory,storageInfo.  Privileges required:  `READ` `REPLICATION`
 
 ### Example
 ```php
@@ -213,9 +214,9 @@ No authorization required
 # **disasterRecoveryPrepareForStandby**
 > \Swagger\Client\Model\DisasterRecoveryPrepareForStandbyResult disasterRecoveryPrepareForStandby($body)
 
-Prepare current VCO to be configured as a standby system
+Prepare current Orchestrator to be configured as a standby system
 
-Transition current VCO to quiesced state, ready to be configured as a standby system. No input parameters are required.  After this call, VCO will be restarted in standby mode; caller should subsequently poll getReplicationStatus until drState is STANDBY_CANDIDATE.  This is the first step to configuring VCO Disaster Recovery.  Privileges required:  `CREATE` `REPLICATION`
+Transition current Orchestrator to quiesced state, ready to be configured as a standby system. No input parameters are required.  After this call, Orchestrator will be restarted in standby mode; caller should subsequently poll getReplicationStatus until drState is STANDBY_CANDIDATE.  This is the first step to configuring Orchestrator Disaster Recovery.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -311,9 +312,9 @@ No authorization required
 # **disasterRecoveryRemoveStandby**
 > \Swagger\Client\Model\DisasterRecoveryRemoveStandbyResult disasterRecoveryRemoveStandby($body)
 
-Unconfigure VCO disaster recovery on the current server
+Unconfigure disaster recovery on the current server
 
-Unconfigure VCO disaster recovery on the current server.  Also, make a best-effort call to removeStandby on the paired DR server. No input parameters are required.  Privileges required:  `CREATE` `REPLICATION`
+Unconfigure disaster recovery on the current server.  Also, make a best-effort call to removeStandby on the paired DR server. No input parameters are required.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -360,9 +361,9 @@ No authorization required
 # **disasterRecoveryTransitionToStandby**
 > \Swagger\Client\Model\DisasterRecoveryTransitionToStandbyResult disasterRecoveryTransitionToStandby($body)
 
-Configure current VCO to transition to standby in disaster recovery active/standby pair.
+Configure current Orchestrator to transition to standby in disaster recovery active/standby pair.
 
-Configure current VCO to transition to standby in disaster recovery active/standby pair. Requires parameter activeAccessFromStandby, which contains the data needed to configure standby. This data is produced by configureActiveForReplication, which by default, automatically calls transitionToStandby; an explicit call is only needed, with a blob obtained from getReplicationBlob, if configureActiveForReplication is called with autoConfigStandby set false.  Privileges required:  `CREATE` `REPLICATION`
+Configure current Orchestrator to transition to standby in disaster recovery active/standby pair. Requires parameter activeAccessFromStandby, which contains the data needed to configure standby. This data is produced by configureActiveForReplication, which by default, automatically calls transitionToStandby; an explicit call is only needed, with a blob obtained from getReplicationBlob, if configureActiveForReplication is called with autoConfigStandby set false.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -394,6 +395,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\DisasterRecoveryTransitionToStandbyResult**](../Model/DisasterRecoveryTransitionToStandbyResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **vcoInventoryAssociateEdge**
+> \Swagger\Client\Model\InlineResponse2001 vcoInventoryAssociateEdge($body)
+
+Return inventory items available at this VCO
+
+Assigns an edge in the inventory to an Enterprise. To perform the action, the edge should already be in a STAGING state. The assignment can be done at an enterprise level, without selecting a destination Edge profile. In such a case, the inventory edge is assigned to a staging profile within the Enterprise. Optionally a profile or destination edge can be assigned to this inventory edge. The edge in the inventory can be assigned to any profile. The inventory edge can be assigned to an Enterprise edge only if it is in a PENDING/REACTIVATION_PENDING state.  Privileges required:  `CREATE` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\DisasterRecoveryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\VcoInventoryAssociateEdge(); // \Swagger\Client\Model\VcoInventoryAssociateEdge | 
+
+try {
+    $result = $apiInstance->vcoInventoryAssociateEdge($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DisasterRecoveryApi->vcoInventoryAssociateEdge: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\VcoInventoryAssociateEdge**](../Model/VcoInventoryAssociateEdge.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

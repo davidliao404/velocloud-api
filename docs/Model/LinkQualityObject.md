@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**distribution** | **object** |  | 
+**distribution** | [**\Swagger\Client\Model\LinkQualityObjectDistribution**](LinkQualityObjectDistribution.md) |  | 
 **sample_count** | **int** |  | 
 **sample_length** | **int** |  | 
-**score** | **object** |  | 
+**score** | **map[string,float]** |  | 
 **timeseries** | [**\Swagger\Client\Model\LinkQualityObjectTimeseriesData[]**](LinkQualityObjectTimeseriesData.md) |  | 
 **total_score** | **float** |  | 
 

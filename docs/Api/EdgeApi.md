@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**edgeEdgeCancelReactivation**](EdgeApi.md#edgeEdgeCancelReactivation) | **POST** /edge/edgeCancelReactivation | Cancel a pending edge reactivation request
 [**edgeEdgeProvision**](EdgeApi.md#edgeEdgeProvision) | **POST** /edge/edgeProvision | Provision an edge
 [**edgeEdgeRequestReactivation**](EdgeApi.md#edgeEdgeRequestReactivation) | **POST** /edge/edgeRequestReactivation | Reactivate an edge
+[**edgeGetClientVisibilityMode**](EdgeApi.md#edgeGetClientVisibilityMode) | **POST** /edge/getClientVisibilityMode | Get an edge&#39;s client visibility mode
 [**edgeGetEdge**](EdgeApi.md#edgeGetEdge) | **POST** /edge/getEdge | Get edge
 [**edgeGetEdgeConfigurationStack**](EdgeApi.md#edgeGetEdgeConfigurationStack) | **POST** /edge/getEdgeConfigurationStack | Get an edge&#39;s configuration stack
 [**edgeSetEdgeEnterpriseConfiguration**](EdgeApi.md#edgeSetEdgeEnterpriseConfiguration) | **POST** /edge/setEdgeEnterpriseConfiguration | Apply an enterprise configuration to an Edge
@@ -252,6 +253,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EdgeEdgeRequestReactivationResult**](../Model/EdgeEdgeRequestReactivationResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **edgeGetClientVisibilityMode**
+> \Swagger\Client\Model\EdgeGetClientVisibilityModeResult edgeGetClientVisibilityMode($body)
+
+Get an edge's client visibility mode
+
+Retrieve an edge's client visibility mode.  Privileges required:  `READ` `EDGE`  `VIEW_FLOW_STATS` `undefined`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\EdgeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EdgeGetClientVisibilityMode(); // \Swagger\Client\Model\EdgeGetClientVisibilityMode | 
+
+try {
+    $result = $apiInstance->edgeGetClientVisibilityMode($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EdgeApi->edgeGetClientVisibilityMode: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EdgeGetClientVisibilityMode**](../Model/EdgeGetClientVisibilityMode.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EdgeGetClientVisibilityModeResult**](../Model/EdgeGetClientVisibilityModeResult.md)
 
 ### Authorization
 

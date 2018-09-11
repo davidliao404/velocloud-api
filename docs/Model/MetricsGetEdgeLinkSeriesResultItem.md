@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**series** | [**\Swagger\Client\Model\FlowMetricTimeSeriesItem**](FlowMetricTimeSeriesItem.md) |  | 
+**series** | [**\Swagger\Client\Model\FlowMetricTimeSeriesItem[]**](FlowMetricTimeSeriesItem.md) |  | 
 **edge_id** | **int** |  | 
 **link** | [**\Swagger\Client\Model\Link**](Link.md) |  | 
 **link_id** | **int** |  | 

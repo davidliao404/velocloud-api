@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**series** | [**\Swagger\Client\Model\FlowMetricTimeSeriesItem**](FlowMetricTimeSeriesItem.md) |  | 
+**series** | [**\Swagger\Client\Model\FlowMetricTimeSeriesItem[]**](FlowMetricTimeSeriesItem.md) |  | 
 **name** | **int** |  | 
 **service_groups** | [**\Swagger\Client\Model\LinkServiceGroups**](LinkServiceGroups.md) |  | 
 

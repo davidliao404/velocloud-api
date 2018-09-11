@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **draft_data** | **string** |  | 
 **draft_created** | [**\DateTime**](\DateTime.md) |  | 
 **draft_comment** | **string** |  | 
-**data** | **string** |  | 
+**data** | **object** |  | 
 **last_contact** | [**\DateTime**](\DateTime.md) |  | 
 **version** | **string** |  | 
 **modified** | [**\DateTime**](\DateTime.md) |  | 

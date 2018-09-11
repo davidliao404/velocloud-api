@@ -11,8 +11,9 @@ Name | Type | Description | Notes
 **total_bytes** | **int** |  | [optional] 
 **total_packets** | **int** |  | [optional] 
 **application** | **int** |  | 
-**category** | **int** |  | 
+**category** | **int** |  | [optional] 
 **name** | **int** |  | 
+**link_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,11 +4,61 @@ All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**systemPropertyGetSystemProperties**](SystemPropertyApi.md#systemPropertyGetSystemProperties) | **POST** /systemProperty/getSystemProperties | Get all system properties
 [**systemPropertyGetSystemProperty**](SystemPropertyApi.md#systemPropertyGetSystemProperty) | **POST** /systemProperty/getSystemProperty | Get system property
 [**systemPropertyInsertOrUpdateSystemProperty**](SystemPropertyApi.md#systemPropertyInsertOrUpdateSystemProperty) | **POST** /systemProperty/insertOrUpdateSystemProperty | Insert or update a system property
 [**systemPropertyInsertSystemProperty**](SystemPropertyApi.md#systemPropertyInsertSystemProperty) | **POST** /systemProperty/insertSystemProperty | Insert a system property
 [**systemPropertyUpdateSystemProperty**](SystemPropertyApi.md#systemPropertyUpdateSystemProperty) | **POST** /systemProperty/updateSystemProperty | Update a system property
 
+
+# **systemPropertyGetSystemProperties**
+> \Swagger\Client\Model\SystemPropertyGetSystemPropertiesResultItem[] systemPropertyGetSystemProperties($body)
+
+Get all system properties
+
+Get a list of all configured system properties.  Privileges required:  `READ` `SYSTEM_PROPERTY`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\SystemPropertyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\SystemPropertyGetSystemProperties(); // \Swagger\Client\Model\SystemPropertyGetSystemProperties | 
+
+try {
+    $result = $apiInstance->systemPropertyGetSystemProperties($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SystemPropertyApi->systemPropertyGetSystemProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\SystemPropertyGetSystemProperties**](../Model/SystemPropertyGetSystemProperties.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\SystemPropertyGetSystemPropertiesResultItem[]**](../Model/SystemPropertyGetSystemPropertiesResultItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **systemPropertyGetSystemProperty**
 > \Swagger\Client\Model\SystemPropertyGetSystemPropertyResult systemPropertyGetSystemProperty($body)

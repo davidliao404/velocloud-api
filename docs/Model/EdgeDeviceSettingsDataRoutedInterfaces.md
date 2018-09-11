@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **subinterfaces** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataSubinterfaces[]**](EdgeDeviceSettingsDataSubinterfaces.md) |  | [optional] 
 **vlan_id** | **int** | static only | [optional] 
 **wan_overlay** | **string** |  | [optional] 
+**trusted** | **bool** |  | [optional] 
+**rpf** | **string** |  | [optional] 
+**underlay_accounting** | **bool** |  | [optional] [default to true]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

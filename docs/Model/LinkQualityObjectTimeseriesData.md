@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**after** | **object** |  | 
+**before** | **map[string,int]** |  | [optional] 
+**after** | **map[string,int]** |  | 
 **metadata** | [**\Swagger\Client\Model\LinkQualityObjectTimeseriesDataMetadata**](LinkQualityObjectTimeseriesDataMetadata.md) |  | 
 **timestamp** | **int** |  | 
 

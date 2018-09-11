@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **vrrp** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataVrrp**](EdgeDeviceSettingsDataVrrp.md) |  | [optional] 
 **snmp** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataSnmp**](EdgeDeviceSettingsDataSnmp.md) |  | [optional] 
 **multi_source_qos** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataMultiSourceQos**](EdgeDeviceSettingsDataMultiSourceQos.md) |  | [optional] 
+**tacacs** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataTacacs**](EdgeDeviceSettingsDataTacacs.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

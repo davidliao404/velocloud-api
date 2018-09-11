@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**configurationCloneAndConvertConfiguration**](AllApi.md#configurationCloneAndConvertConfiguration) | **POST** /configuration/cloneAndConvertConfiguration | Clone and convert a network based profile configuration to segment based profile configuration
 [**configurationCloneConfiguration**](AllApi.md#configurationCloneConfiguration) | **POST** /configuration/cloneConfiguration | Clone a configuration profile
 [**configurationCloneEnterpriseTemplate**](AllApi.md#configurationCloneEnterpriseTemplate) | **POST** /configuration/cloneEnterpriseTemplate | Clone the default enterprise configuration profile
 [**configurationDeleteConfiguration**](AllApi.md#configurationDeleteConfiguration) | **POST** /configuration/deleteConfiguration | Delete a configuration profile
@@ -12,19 +13,20 @@ Method | HTTP request | Description
 [**configurationGetRoutableApplications**](AllApi.md#configurationGetRoutableApplications) | **POST** /configuration/getRoutableApplications | List applications that are first packet routable
 [**configurationInsertConfigurationModule**](AllApi.md#configurationInsertConfigurationModule) | **POST** /configuration/insertConfigurationModule | Insert a new configuration module
 [**configurationUpdateConfigurationModule**](AllApi.md#configurationUpdateConfigurationModule) | **POST** /configuration/updateConfigurationModule | Update a configuration module
-[**disasterRecoveryConfigureActiveForReplication**](AllApi.md#disasterRecoveryConfigureActiveForReplication) | **POST** /disasterRecovery/configureActiveForReplication | Designate a standby VCO for disaster recovery replication
+[**disasterRecoveryConfigureActiveForReplication**](AllApi.md#disasterRecoveryConfigureActiveForReplication) | **POST** /disasterRecovery/configureActiveForReplication | Designate a standby Orchestrator for disaster recovery replication
 [**disasterRecoveryDemoteActive**](AllApi.md#disasterRecoveryDemoteActive) | **POST** /disasterRecovery/demoteActive | Demote current server from active to zombie
-[**disasterRecoveryGetReplicationBlob**](AllApi.md#disasterRecoveryGetReplicationBlob) | **POST** /disasterRecovery/getReplicationBlob | Get the blob needed to configure VCO replication on the standby
-[**disasterRecoveryGetReplicationStatus**](AllApi.md#disasterRecoveryGetReplicationStatus) | **POST** /disasterRecovery/getReplicationStatus | Get VCO disaster recovery status
-[**disasterRecoveryPrepareForStandby**](AllApi.md#disasterRecoveryPrepareForStandby) | **POST** /disasterRecovery/prepareForStandby | Prepare current VCO to be configured as a standby system
+[**disasterRecoveryGetReplicationBlob**](AllApi.md#disasterRecoveryGetReplicationBlob) | **POST** /disasterRecovery/getReplicationBlob | Get the blob needed to configure replication on the standby
+[**disasterRecoveryGetReplicationStatus**](AllApi.md#disasterRecoveryGetReplicationStatus) | **POST** /disasterRecovery/getReplicationStatus | Get disaster recovery status
+[**disasterRecoveryPrepareForStandby**](AllApi.md#disasterRecoveryPrepareForStandby) | **POST** /disasterRecovery/prepareForStandby | Prepare current Orchestrator to be configured as a standby system
 [**disasterRecoveryPromoteStandbyToActive**](AllApi.md#disasterRecoveryPromoteStandbyToActive) | **POST** /disasterRecovery/promoteStandbyToActive | Promote the current server to take over as the single standalone VCO
-[**disasterRecoveryRemoveStandby**](AllApi.md#disasterRecoveryRemoveStandby) | **POST** /disasterRecovery/removeStandby | Unconfigure VCO disaster recovery on the current server
-[**disasterRecoveryTransitionToStandby**](AllApi.md#disasterRecoveryTransitionToStandby) | **POST** /disasterRecovery/transitionToStandby | Configure current VCO to transition to standby in disaster recovery active/standby pair.
+[**disasterRecoveryRemoveStandby**](AllApi.md#disasterRecoveryRemoveStandby) | **POST** /disasterRecovery/removeStandby | Unconfigure disaster recovery on the current server
+[**disasterRecoveryTransitionToStandby**](AllApi.md#disasterRecoveryTransitionToStandby) | **POST** /disasterRecovery/transitionToStandby | Configure current Orchestrator to transition to standby in disaster recovery active/standby pair.
 [**edgeDeleteEdge**](AllApi.md#edgeDeleteEdge) | **POST** /edge/deleteEdge | Delete an edge
 [**edgeDeleteEdgeBgpNeighborRecords**](AllApi.md#edgeDeleteEdgeBgpNeighborRecords) | **POST** /edge/deleteEdgeBgpNeighborRecords | Delete edge BGP neighbor records
 [**edgeEdgeCancelReactivation**](AllApi.md#edgeEdgeCancelReactivation) | **POST** /edge/edgeCancelReactivation | Cancel a pending edge reactivation request
 [**edgeEdgeProvision**](AllApi.md#edgeEdgeProvision) | **POST** /edge/edgeProvision | Provision an edge
 [**edgeEdgeRequestReactivation**](AllApi.md#edgeEdgeRequestReactivation) | **POST** /edge/edgeRequestReactivation | Reactivate an edge
+[**edgeGetClientVisibilityMode**](AllApi.md#edgeGetClientVisibilityMode) | **POST** /edge/getClientVisibilityMode | Get an edge&#39;s client visibility mode
 [**edgeGetEdge**](AllApi.md#edgeGetEdge) | **POST** /edge/getEdge | Get edge
 [**edgeGetEdgeConfigurationStack**](AllApi.md#edgeGetEdgeConfigurationStack) | **POST** /edge/getEdgeConfigurationStack | Get an edge&#39;s configuration stack
 [**edgeSetEdgeEnterpriseConfiguration**](AllApi.md#edgeSetEdgeEnterpriseConfiguration) | **POST** /edge/setEdgeEnterpriseConfiguration | Apply an enterprise configuration to an Edge
@@ -48,22 +50,30 @@ Method | HTTP request | Description
 [**enterpriseGetEnterpriseGatewayHandoff**](AllApi.md#enterpriseGetEnterpriseGatewayHandoff) | **POST** /enterprise/getEnterpriseGatewayHandoff | Get enterprise gateway handoff configuration
 [**enterpriseGetEnterpriseNetworkAllocation**](AllApi.md#enterpriseGetEnterpriseNetworkAllocation) | **POST** /enterprise/getEnterpriseNetworkAllocation | Get an enterprise network allocation
 [**enterpriseGetEnterpriseNetworkAllocations**](AllApi.md#enterpriseGetEnterpriseNetworkAllocations) | **POST** /enterprise/getEnterpriseNetworkAllocations | Get all network allocation objects defined on an enterprise
+[**enterpriseGetEnterpriseProperty**](AllApi.md#enterpriseGetEnterpriseProperty) | **POST** /enterprise/getEnterpriseProperty | Get enterprise property
 [**enterpriseGetEnterpriseRouteConfiguration**](AllApi.md#enterpriseGetEnterpriseRouteConfiguration) | **POST** /enterprise/getEnterpriseRouteConfiguration | Get route advertisement and routing preferences policy
 [**enterpriseGetEnterpriseRouteTable**](AllApi.md#enterpriseGetEnterpriseRouteTable) | **POST** /enterprise/getEnterpriseRouteTable | Get the enterprise route table
 [**enterpriseGetEnterpriseServices**](AllApi.md#enterpriseGetEnterpriseServices) | **POST** /enterprise/getEnterpriseServices | Get enterprise network service detail
 [**enterpriseGetEnterpriseUsers**](AllApi.md#enterpriseGetEnterpriseUsers) | **POST** /enterprise/getEnterpriseUsers | Get list of enterprise users by enterprise id
 [**enterpriseInsertEnterprise**](AllApi.md#enterpriseInsertEnterprise) | **POST** /enterprise/insertEnterprise | Insert a new enterprise
 [**enterpriseInsertEnterpriseNetworkAllocation**](AllApi.md#enterpriseInsertEnterpriseNetworkAllocation) | **POST** /enterprise/insertEnterpriseNetworkAllocation | Insert an enterprise network allocation
+[**enterpriseInsertEnterpriseNetworkSegment**](AllApi.md#enterpriseInsertEnterpriseNetworkSegment) | **POST** /enterprise/insertEnterpriseNetworkSegment | Insert an enterprise network segment
 [**enterpriseInsertEnterpriseService**](AllApi.md#enterpriseInsertEnterpriseService) | **POST** /enterprise/insertEnterpriseService | Insert a new enterprise service
 [**enterpriseInsertEnterpriseUser**](AllApi.md#enterpriseInsertEnterpriseUser) | **POST** /enterprise/insertEnterpriseUser | Insert an enterprise user
 [**enterpriseInsertOrUpdateEnterpriseAlertConfigurations**](AllApi.md#enterpriseInsertOrUpdateEnterpriseAlertConfigurations) | **POST** /enterprise/insertOrUpdateEnterpriseAlertConfigurations | Insert, update, or delete enterprise alert configurations
 [**enterpriseInsertOrUpdateEnterpriseCapability**](AllApi.md#enterpriseInsertOrUpdateEnterpriseCapability) | **POST** /enterprise/insertOrUpdateEnterpriseCapability | Insert or update an enterprise capability
 [**enterpriseInsertOrUpdateEnterpriseGatewayHandoff**](AllApi.md#enterpriseInsertOrUpdateEnterpriseGatewayHandoff) | **POST** /enterprise/insertOrUpdateEnterpriseGatewayHandoff | Insert or update an enterprise gateway handoff configuration
+[**enterpriseInsertOrUpdateEnterpriseProperty**](AllApi.md#enterpriseInsertOrUpdateEnterpriseProperty) | **POST** /enterprise/insertOrUpdateEnterpriseProperty | Insert or update an enterprise property
+[**enterpriseProxyDeleteEnterpriseProxyUser**](AllApi.md#enterpriseProxyDeleteEnterpriseProxyUser) | **POST** /enterpriseProxy/deleteEnterpriseProxyUser | Delete an enterprise proxy admin user
 [**enterpriseProxyGetEnterpriseProxyEdgeInventory**](AllApi.md#enterpriseProxyGetEnterpriseProxyEdgeInventory) | **POST** /enterpriseProxy/getEnterpriseProxyEdgeInventory | Get a list of all partner enterprises and edge inventory associated with each enterprise
 [**enterpriseProxyGetEnterpriseProxyEnterprises**](AllApi.md#enterpriseProxyGetEnterpriseProxyEnterprises) | **POST** /enterpriseProxy/getEnterpriseProxyEnterprises | Get a list of all partner enterprises
 [**enterpriseProxyGetEnterpriseProxyGatewayPools**](AllApi.md#enterpriseProxyGetEnterpriseProxyGatewayPools) | **POST** /enterpriseProxy/getEnterpriseProxyGatewayPools | Get list of gateway pools
 [**enterpriseProxyGetEnterpriseProxyOperatorProfiles**](AllApi.md#enterpriseProxyGetEnterpriseProxyOperatorProfiles) | **POST** /enterpriseProxy/getEnterpriseProxyOperatorProfiles | Get the operator profiles associated with a partner
+[**enterpriseProxyGetEnterpriseProxyUser**](AllApi.md#enterpriseProxyGetEnterpriseProxyUser) | **POST** /enterpriseProxy/getEnterpriseProxyUser | Get an enterprise proxy user
+[**enterpriseProxyGetEnterpriseProxyUsers**](AllApi.md#enterpriseProxyGetEnterpriseProxyUsers) | **POST** /enterpriseProxy/getEnterpriseProxyUsers | Get all enterprise proxy admin users
 [**enterpriseProxyInsertEnterpriseProxyEnterprise**](AllApi.md#enterpriseProxyInsertEnterpriseProxyEnterprise) | **POST** /enterpriseProxy/insertEnterpriseProxyEnterprise | Insert a new enterprise owned by an MSP
+[**enterpriseProxyInsertEnterpriseProxyUser**](AllApi.md#enterpriseProxyInsertEnterpriseProxyUser) | **POST** /enterpriseProxy/insertEnterpriseProxyUser | Create a new partner admin user
+[**enterpriseProxyUpdateEnterpriseProxyUser**](AllApi.md#enterpriseProxyUpdateEnterpriseProxyUser) | **POST** /enterpriseProxy/updateEnterpriseProxyUser | Update an enterprise proxy admin user
 [**enterpriseSetEnterpriseAllAlertRecipients**](AllApi.md#enterpriseSetEnterpriseAllAlertRecipients) | **POST** /enterprise/setEnterpriseAllAlertsRecipients | Set the recipients who should receive all alerts for an enterprise
 [**enterpriseUpdateEnterprise**](AllApi.md#enterpriseUpdateEnterprise) | **POST** /enterprise/updateEnterprise | Update an enterprise
 [**enterpriseUpdateEnterpriseNetworkAllocation**](AllApi.md#enterpriseUpdateEnterpriseNetworkAllocation) | **POST** /enterprise/updateEnterpriseNetworkAllocation | Update an enterprise network allocation
@@ -81,9 +91,6 @@ Method | HTTP request | Description
 [**gatewayGatewayProvision**](AllApi.md#gatewayGatewayProvision) | **POST** /gateway/gatewayProvision | Provision a gateway
 [**gatewayUpdateGatewayAttributes**](AllApi.md#gatewayUpdateGatewayAttributes) | **POST** /gateway/updateGatewayAttributes | Update gateway attributes
 [**linkQualityEventGetLinkQualityEvents**](AllApi.md#linkQualityEventGetLinkQualityEvents) | **POST** /linkQualityEvent/getLinkQualityEvents | Get link quality data
-[**liveModeEnterLiveMode**](AllApi.md#liveModeEnterLiveMode) | **POST** /liveMode/enterLiveMode | Enter live mode on an edge
-[**liveModeExitLiveMode**](AllApi.md#liveModeExitLiveMode) | **POST** /liveMode/exitLiveMode | Exit live mode on an edge
-[**liveModeReadLiveData**](AllApi.md#liveModeReadLiveData) | **POST** /liveMode/readLiveData | Read live data from an edge that is in live mode
 [**loginEnterpriseLogin**](AllApi.md#loginEnterpriseLogin) | **POST** /login/enterpriseLogin | Authentication for non-operator users
 [**loginOperatorLogin**](AllApi.md#loginOperatorLogin) | **POST** /login/operatorLogin | Authentication for an operator user
 [**logout**](AllApi.md#logout) | **POST** /logout | Deactivate a given authorization cookie
@@ -129,11 +136,63 @@ Method | HTTP request | Description
 [**roleSetEnterpriseDelegatedToOperator**](AllApi.md#roleSetEnterpriseDelegatedToOperator) | **POST** /role/setEnterpriseDelegatedToOperator | Grant enterprise access to the network operator
 [**roleSetEnterpriseProxyDelegatedToOperator**](AllApi.md#roleSetEnterpriseProxyDelegatedToOperator) | **POST** /role/setEnterpriseProxyDelegatedToOperator | Grant enterprise proxy access to the network operator
 [**roleSetEnterpriseUserManagementDelegatedToOperator**](AllApi.md#roleSetEnterpriseUserManagementDelegatedToOperator) | **POST** /role/setEnterpriseUserManagementDelegatedToOperator | Grant enterprise user access to the network operator
+[**systemPropertyGetSystemProperties**](AllApi.md#systemPropertyGetSystemProperties) | **POST** /systemProperty/getSystemProperties | Get all system properties
 [**systemPropertyGetSystemProperty**](AllApi.md#systemPropertyGetSystemProperty) | **POST** /systemProperty/getSystemProperty | Get system property
 [**systemPropertyInsertOrUpdateSystemProperty**](AllApi.md#systemPropertyInsertOrUpdateSystemProperty) | **POST** /systemProperty/insertOrUpdateSystemProperty | Insert or update a system property
 [**systemPropertyInsertSystemProperty**](AllApi.md#systemPropertyInsertSystemProperty) | **POST** /systemProperty/insertSystemProperty | Insert a system property
 [**systemPropertyUpdateSystemProperty**](AllApi.md#systemPropertyUpdateSystemProperty) | **POST** /systemProperty/updateSystemProperty | Update a system property
+[**vcoInventoryAssociateEdge**](AllApi.md#vcoInventoryAssociateEdge) | **POST** /vcoInventory/associateEdge | Return inventory items available at this VCO
+[**vcoInventoryGetInventoryItems**](AllApi.md#vcoInventoryGetInventoryItems) | **POST** /vcoInventory/getInventoryItems | Return inventory items available at this VCO
 
+
+# **configurationCloneAndConvertConfiguration**
+> \Swagger\Client\Model\ConfigurationCloneAndConvertConfigurationResult configurationCloneAndConvertConfiguration($body)
+
+Clone and convert a network based profile configuration to segment based profile configuration
+
+Clones an convert existing network configuration by configurationId. Accepts an enterpriseId or networkId to associate the new config with an enterprise or network. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration(); // \Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration | 
+
+try {
+    $result = $apiInstance->configurationCloneAndConvertConfiguration($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->configurationCloneAndConvertConfiguration: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\ConfigurationCloneAndConvertConfiguration**](../Model/ConfigurationCloneAndConvertConfiguration.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\ConfigurationCloneAndConvertConfigurationResult**](../Model/ConfigurationCloneAndConvertConfigurationResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **configurationCloneConfiguration**
 > \Swagger\Client\Model\ConfigurationCloneConfigurationResult configurationCloneConfiguration($body)
@@ -189,7 +248,7 @@ No authorization required
 
 Clone the default enterprise configuration profile
 
-Creates a new enterprise configuration from the VCO enterprise default configuration. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
+Creates a new enterprise configuration from the enterprise default configuration. On success, returns an object the ID of the newly created configuration object.  Privileges required:  `CREATE` `ENTERPRISE_PROFILE`, or  `CREATE` `OPERATOR_PROFILE`
 
 ### Example
 ```php
@@ -385,7 +444,7 @@ No authorization required
 
 List applications that are first packet routable
 
-List the applications that are first packet routable. If called from the operator context, an enterprise ID may optionally be specified to filter the result set. Additionally, an edge ID may be specified to get the map for a specific edge.  Privileges required:  `READ` `ENTERPRISE_PROFILE`
+List the applications that are first packet routable. If called from the operator context, an enterprise ID may optionally be specified to filter the result set. Additionally, an edge ID may be specified to get the map for a specific edge.  Privileges required:  `VIEW_FLOW_STATS` `undefined`
 
 ### Example
 ```php
@@ -530,9 +589,9 @@ No authorization required
 # **disasterRecoveryConfigureActiveForReplication**
 > \Swagger\Client\Model\DisasterRecoveryConfigureActiveForReplicationResult disasterRecoveryConfigureActiveForReplication($body)
 
-Designate a standby VCO for disaster recovery replication
+Designate a standby Orchestrator for disaster recovery replication
 
-Configure the current VCO to be active and the specified VCO to be standby for VCO disaster recovery replication. Required attributes are 1) standbyList, a single-entry array containing the standbyAddress and standbyUuid, 2) drVCOUser, a VCO super user available on both the active and standby VCOs, and 3) drVCOPassword, the password of drVCOUser on the standby VCO (unless the autoConfigStandby option is specified as false). The call sets up the active VCO to allow replication from the standby and then (unless autoConfigStandby is false) makes a transitionToStandby API call to the specified standby, expected to have been previously placed in STANDBY_CANDIDATE state via prepareForStandby.  After this call, the active and standby VCOs should be polled via getReplicationStatus until they  both reach STANDBY_RUNNING drState (or a configuration error is reported).  (Note: the drVCOPassword is not persisted.)  Privileges required:  `CREATE` `REPLICATION`
+Configure the current Orchestrator to be active and the specified Orchestrator to be standby for Orchestrator disaster recovery replication. Required attributes are 1) standbyList, a single-entry array containing the standbyAddress and standbyUuid, 2) drVCOUser, a Orchestrator super user available on both the active and standby VCOs, and 3) drVCOPassword, the password of drVCOUser on the standby Orchestrator (unless the autoConfigStandby option is specified as false). The call sets up the active Orchestrator to allow replication from the standby and then (unless autoConfigStandby is false) makes a transitionToStandby API call to the specified standby, expected to have been previously placed in STANDBY_CANDIDATE state via prepareForStandby.  After this call, the active and standby VCOs should be polled via getReplicationStatus until they  both reach STANDBY_RUNNING drState (or a configuration error is reported).  (Note: the drVCOPassword is not persisted.)  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -628,9 +687,9 @@ No authorization required
 # **disasterRecoveryGetReplicationBlob**
 > \Swagger\Client\Model\DisasterRecoveryGetReplicationBlobResult disasterRecoveryGetReplicationBlob($body)
 
-Get the blob needed to configure VCO replication on the standby
+Get the blob needed to configure replication on the standby
 
-Get from the active VCO the blob needed to configure VCO replication on the standby. Only used when configureActiveForReplication was called with autoConfigStandby set to false [true by default].  Privileges required:  `CREATE` `REPLICATION`
+Get from the active Orchestrator the blob needed to configure replication on the standby. Only used when configureActiveForReplication was called with autoConfigStandby set to false [true by default].  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -677,9 +736,9 @@ No authorization required
 # **disasterRecoveryGetReplicationStatus**
 > \Swagger\Client\Model\DisasterRecoveryGetReplicationStatusResult disasterRecoveryGetReplicationStatus($body)
 
-Get VCO disaster recovery status
+Get disaster recovery status
 
-Get VCO disaster recovery replication status, optionally with client contact, state transition history, and storage information.  No input parameters are required.  Can optionally specify 1 or more of the following with parameters: clientContact,clientCount,stateHistory,storageInfo.  Privileges required:  `READ` `REPLICATION`
+Get disaster recovery replication status, optionally with client contact, state transition history, and storage information.  No input parameters are required.  Can optionally specify 1 or more of the following with parameters: clientContact,clientCount,stateHistory,storageInfo.  Privileges required:  `READ` `REPLICATION`
 
 ### Example
 ```php
@@ -726,9 +785,9 @@ No authorization required
 # **disasterRecoveryPrepareForStandby**
 > \Swagger\Client\Model\DisasterRecoveryPrepareForStandbyResult disasterRecoveryPrepareForStandby($body)
 
-Prepare current VCO to be configured as a standby system
+Prepare current Orchestrator to be configured as a standby system
 
-Transition current VCO to quiesced state, ready to be configured as a standby system. No input parameters are required.  After this call, VCO will be restarted in standby mode; caller should subsequently poll getReplicationStatus until drState is STANDBY_CANDIDATE.  This is the first step to configuring VCO Disaster Recovery.  Privileges required:  `CREATE` `REPLICATION`
+Transition current Orchestrator to quiesced state, ready to be configured as a standby system. No input parameters are required.  After this call, Orchestrator will be restarted in standby mode; caller should subsequently poll getReplicationStatus until drState is STANDBY_CANDIDATE.  This is the first step to configuring Orchestrator Disaster Recovery.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -824,9 +883,9 @@ No authorization required
 # **disasterRecoveryRemoveStandby**
 > \Swagger\Client\Model\DisasterRecoveryRemoveStandbyResult disasterRecoveryRemoveStandby($body)
 
-Unconfigure VCO disaster recovery on the current server
+Unconfigure disaster recovery on the current server
 
-Unconfigure VCO disaster recovery on the current server.  Also, make a best-effort call to removeStandby on the paired DR server. No input parameters are required.  Privileges required:  `CREATE` `REPLICATION`
+Unconfigure disaster recovery on the current server.  Also, make a best-effort call to removeStandby on the paired DR server. No input parameters are required.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -873,9 +932,9 @@ No authorization required
 # **disasterRecoveryTransitionToStandby**
 > \Swagger\Client\Model\DisasterRecoveryTransitionToStandbyResult disasterRecoveryTransitionToStandby($body)
 
-Configure current VCO to transition to standby in disaster recovery active/standby pair.
+Configure current Orchestrator to transition to standby in disaster recovery active/standby pair.
 
-Configure current VCO to transition to standby in disaster recovery active/standby pair. Requires parameter activeAccessFromStandby, which contains the data needed to configure standby. This data is produced by configureActiveForReplication, which by default, automatically calls transitionToStandby; an explicit call is only needed, with a blob obtained from getReplicationBlob, if configureActiveForReplication is called with autoConfigStandby set false.  Privileges required:  `CREATE` `REPLICATION`
+Configure current Orchestrator to transition to standby in disaster recovery active/standby pair. Requires parameter activeAccessFromStandby, which contains the data needed to configure standby. This data is produced by configureActiveForReplication, which by default, automatically calls transitionToStandby; an explicit call is only needed, with a blob obtained from getReplicationBlob, if configureActiveForReplication is called with autoConfigStandby set false.  Privileges required:  `CREATE` `REPLICATION`
 
 ### Example
 ```php
@@ -1152,6 +1211,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EdgeEdgeRequestReactivationResult**](../Model/EdgeEdgeRequestReactivationResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **edgeGetClientVisibilityMode**
+> \Swagger\Client\Model\EdgeGetClientVisibilityModeResult edgeGetClientVisibilityMode($body)
+
+Get an edge's client visibility mode
+
+Retrieve an edge's client visibility mode.  Privileges required:  `READ` `EDGE`  `VIEW_FLOW_STATS` `undefined`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EdgeGetClientVisibilityMode(); // \Swagger\Client\Model\EdgeGetClientVisibilityMode | 
+
+try {
+    $result = $apiInstance->edgeGetClientVisibilityMode($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->edgeGetClientVisibilityMode: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EdgeGetClientVisibilityMode**](../Model/EdgeGetClientVisibilityMode.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EdgeGetClientVisibilityModeResult**](../Model/EdgeGetClientVisibilityModeResult.md)
 
 ### Authorization
 
@@ -2291,6 +2399,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseGetEnterpriseProperty**
+> \Swagger\Client\Model\EnterpriseGetEnterprisePropertyResult enterpriseGetEnterpriseProperty($body)
+
+Get enterprise property
+
+Get a enterprise property by object id or other attribute.  Privileges required:  `READ` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseGetEnterpriseProperty(); // \Swagger\Client\Model\EnterpriseGetEnterpriseProperty | 
+
+try {
+    $result = $apiInstance->enterpriseGetEnterpriseProperty($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseGetEnterpriseProperty: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseGetEnterpriseProperty**](../Model/EnterpriseGetEnterpriseProperty.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseGetEnterprisePropertyResult**](../Model/EnterpriseGetEnterprisePropertyResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseGetEnterpriseRouteConfiguration**
 > \Swagger\Client\Model\EnterpriseGetEnterpriseRouteConfigurationResult enterpriseGetEnterpriseRouteConfiguration($body)
 
@@ -2585,6 +2742,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseInsertEnterpriseNetworkSegment**
+> \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegmentResult enterpriseInsertEnterpriseNetworkSegment($body)
+
+Insert an enterprise network segment
+
+Insert a new enterprise network segment.  Privileges required:  `CREATE` `NETWORK_ALLOCATION`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment(); // \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment | 
+
+try {
+    $result = $apiInstance->enterpriseInsertEnterpriseNetworkSegment($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseInsertEnterpriseNetworkSegment: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment**](../Model/EnterpriseInsertEnterpriseNetworkSegment.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegmentResult**](../Model/EnterpriseInsertEnterpriseNetworkSegmentResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseInsertEnterpriseService**
 > \Swagger\Client\Model\EnterpriseInsertEnterpriseServiceResult enterpriseInsertEnterpriseService($body)
 
@@ -2830,6 +3036,104 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseInsertOrUpdateEnterpriseProperty**
+> \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterprisePropertyResult enterpriseInsertOrUpdateEnterpriseProperty($body)
+
+Insert or update an enterprise property
+
+Insert a enterprise property. If property with the given name already exists, the property will be updated.  Privileges required:  `READ` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty(); // \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty | 
+
+try {
+    $result = $apiInstance->enterpriseInsertOrUpdateEnterpriseProperty($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseInsertOrUpdateEnterpriseProperty: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty**](../Model/EnterpriseInsertOrUpdateEnterpriseProperty.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseInsertOrUpdateEnterprisePropertyResult**](../Model/EnterpriseInsertOrUpdateEnterprisePropertyResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enterpriseProxyDeleteEnterpriseProxyUser**
+> \Swagger\Client\Model\EnterpriseProxyDeleteEnterpriseProxyUserResult enterpriseProxyDeleteEnterpriseProxyUser($body)
+
+Delete an enterprise proxy admin user
+
+Delete an enterprise proxy user by id or username. Note that `enterpriseProxyId` is a required parameter when invoking this method as an operator or partner user.  Privileges required:  `DELETE` `PROXY_USER`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseProxyDeleteEnterpriseProxyUser(); // \Swagger\Client\Model\EnterpriseProxyDeleteEnterpriseProxyUser | 
+
+try {
+    $result = $apiInstance->enterpriseProxyDeleteEnterpriseProxyUser($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseProxyDeleteEnterpriseProxyUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseProxyDeleteEnterpriseProxyUser**](../Model/EnterpriseProxyDeleteEnterpriseProxyUser.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseProxyDeleteEnterpriseProxyUserResult**](../Model/EnterpriseProxyDeleteEnterpriseProxyUserResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseProxyGetEnterpriseProxyEdgeInventory**
 > \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyEdgeInventoryResultItem[] enterpriseProxyGetEnterpriseProxyEdgeInventory($body)
 
@@ -3026,6 +3330,104 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseProxyGetEnterpriseProxyUser**
+> \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUser enterpriseProxyGetEnterpriseProxyUser($body)
+
+Get an enterprise proxy user
+
+Get an enterprise proxy user by id or username.  Privileges required:  `READ` `PROXY_USER`  `READ` `PROXY`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUser(); // \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUser | 
+
+try {
+    $result = $apiInstance->enterpriseProxyGetEnterpriseProxyUser($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseProxyGetEnterpriseProxyUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUser**](../Model/EnterpriseProxyGetEnterpriseProxyUser.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUser**](../Model/EnterpriseProxyGetEnterpriseProxyUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enterpriseProxyGetEnterpriseProxyUsers**
+> \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUsersResultItem[] enterpriseProxyGetEnterpriseProxyUsers($body)
+
+Get all enterprise proxy admin users
+
+undefined  Privileges required:  `READ` `ENTERPRISE`  `READ` `PROXY_USER`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUsers(); // \Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUsers | 
+
+try {
+    $result = $apiInstance->enterpriseProxyGetEnterpriseProxyUsers($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseProxyGetEnterpriseProxyUsers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUsers**](../Model/EnterpriseProxyGetEnterpriseProxyUsers.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseProxyGetEnterpriseProxyUsersResultItem[]**](../Model/EnterpriseProxyGetEnterpriseProxyUsersResultItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseProxyInsertEnterpriseProxyEnterprise**
 > \Swagger\Client\Model\EnterpriseProxyInsertEnterpriseProxyEnterpriseResult enterpriseProxyInsertEnterpriseProxyEnterprise($body)
 
@@ -3063,6 +3465,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EnterpriseProxyInsertEnterpriseProxyEnterpriseResult**](../Model/EnterpriseProxyInsertEnterpriseProxyEnterpriseResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enterpriseProxyInsertEnterpriseProxyUser**
+> \Swagger\Client\Model\EnterpriseProxyInsertEnterpriseProxyUserResult enterpriseProxyInsertEnterpriseProxyUser($body)
+
+Create a new partner admin user
+
+Create a new partner admin user  Privileges required:  `CREATE` `PROXY_USER`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\NewEnterpriseProxyUser(); // \Swagger\Client\Model\NewEnterpriseProxyUser | 
+
+try {
+    $result = $apiInstance->enterpriseProxyInsertEnterpriseProxyUser($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseProxyInsertEnterpriseProxyUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\NewEnterpriseProxyUser**](../Model/NewEnterpriseProxyUser.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseProxyInsertEnterpriseProxyUserResult**](../Model/EnterpriseProxyInsertEnterpriseProxyUserResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enterpriseProxyUpdateEnterpriseProxyUser**
+> \Swagger\Client\Model\EnterpriseProxyUpdateEnterpriseProxyUserResult enterpriseProxyUpdateEnterpriseProxyUser($body)
+
+Update an enterprise proxy admin user
+
+Update an enterprise proxy admin user  Privileges required:  `UPDATE` `PROXY_USER`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseProxyUpdateEnterpriseProxyUser(); // \Swagger\Client\Model\EnterpriseProxyUpdateEnterpriseProxyUser | 
+
+try {
+    $result = $apiInstance->enterpriseProxyUpdateEnterpriseProxyUser($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->enterpriseProxyUpdateEnterpriseProxyUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseProxyUpdateEnterpriseProxyUser**](../Model/EnterpriseProxyUpdateEnterpriseProxyUser.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseProxyUpdateEnterpriseProxyUserResult**](../Model/EnterpriseProxyUpdateEnterpriseProxyUserResult.md)
 
 ### Authorization
 
@@ -3896,153 +4396,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\LinkQualityEventGetLinkQualityEventsResult**](../Model/LinkQualityEventGetLinkQualityEventsResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **liveModeEnterLiveMode**
-> \Swagger\Client\Model\LiveModeEnterLiveModeResult liveModeEnterLiveMode($body)
-
-Enter live mode on an edge
-
-Enter live mode on an edge, provided it is not already in live mode  Privileges required:  `READ` `EDGE`
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\AllApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \Swagger\Client\Model\LiveModeEnterLiveMode(); // \Swagger\Client\Model\LiveModeEnterLiveMode | 
-
-try {
-    $result = $apiInstance->liveModeEnterLiveMode($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AllApi->liveModeEnterLiveMode: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\LiveModeEnterLiveMode**](../Model/LiveModeEnterLiveMode.md)|  |
-
-### Return type
-
-[**\Swagger\Client\Model\LiveModeEnterLiveModeResult**](../Model/LiveModeEnterLiveModeResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **liveModeExitLiveMode**
-> \Swagger\Client\Model\LiveModeExitLiveModeResult liveModeExitLiveMode($body)
-
-Exit live mode on an edge
-
-Exit live mode on an edge  Privileges required:  `READ` `EDGE`
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\AllApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \Swagger\Client\Model\LiveModeExitLiveMode(); // \Swagger\Client\Model\LiveModeExitLiveMode | 
-
-try {
-    $result = $apiInstance->liveModeExitLiveMode($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AllApi->liveModeExitLiveMode: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\LiveModeExitLiveMode**](../Model/LiveModeExitLiveMode.md)|  |
-
-### Return type
-
-[**\Swagger\Client\Model\LiveModeExitLiveModeResult**](../Model/LiveModeExitLiveModeResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **liveModeReadLiveData**
-> \Swagger\Client\Model\LiveModeReadLiveDataResult liveModeReadLiveData($body)
-
-Read live data from an edge that is in live mode
-
-Read live data from an edge that is in live mode  Privileges required:  `READ` `EDGE`
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\AllApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \Swagger\Client\Model\LiveModeReadLiveData(); // \Swagger\Client\Model\LiveModeReadLiveData | 
-
-try {
-    $result = $apiInstance->liveModeReadLiveData($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AllApi->liveModeReadLiveData: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\LiveModeReadLiveData**](../Model/LiveModeReadLiveData.md)|  |
-
-### Return type
-
-[**\Swagger\Client\Model\LiveModeReadLiveDataResult**](../Model/LiveModeReadLiveDataResult.md)
 
 ### Authorization
 
@@ -6245,6 +6598,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **systemPropertyGetSystemProperties**
+> \Swagger\Client\Model\SystemPropertyGetSystemPropertiesResultItem[] systemPropertyGetSystemProperties($body)
+
+Get all system properties
+
+Get a list of all configured system properties.  Privileges required:  `READ` `SYSTEM_PROPERTY`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\SystemPropertyGetSystemProperties(); // \Swagger\Client\Model\SystemPropertyGetSystemProperties | 
+
+try {
+    $result = $apiInstance->systemPropertyGetSystemProperties($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->systemPropertyGetSystemProperties: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\SystemPropertyGetSystemProperties**](../Model/SystemPropertyGetSystemProperties.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\SystemPropertyGetSystemPropertiesResultItem[]**](../Model/SystemPropertyGetSystemPropertiesResultItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **systemPropertyGetSystemProperty**
 > \Swagger\Client\Model\SystemPropertyGetSystemPropertyResult systemPropertyGetSystemProperty($body)
 
@@ -6429,6 +6831,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\SystemPropertyUpdateSystemPropertyResult**](../Model/SystemPropertyUpdateSystemPropertyResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **vcoInventoryAssociateEdge**
+> \Swagger\Client\Model\InlineResponse2001 vcoInventoryAssociateEdge($body)
+
+Return inventory items available at this VCO
+
+Assigns an edge in the inventory to an Enterprise. To perform the action, the edge should already be in a STAGING state. The assignment can be done at an enterprise level, without selecting a destination Edge profile. In such a case, the inventory edge is assigned to a staging profile within the Enterprise. Optionally a profile or destination edge can be assigned to this inventory edge. The edge in the inventory can be assigned to any profile. The inventory edge can be assigned to an Enterprise edge only if it is in a PENDING/REACTIVATION_PENDING state.  Privileges required:  `CREATE` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\VcoInventoryAssociateEdge(); // \Swagger\Client\Model\VcoInventoryAssociateEdge | 
+
+try {
+    $result = $apiInstance->vcoInventoryAssociateEdge($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->vcoInventoryAssociateEdge: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\VcoInventoryAssociateEdge**](../Model/VcoInventoryAssociateEdge.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **vcoInventoryGetInventoryItems**
+> \Swagger\Client\Model\VcoInventoryGetInventoryItemsResult vcoInventoryGetInventoryItems($body)
+
+Return inventory items available at this VCO
+
+Retrieve all the inventory information available with this VCO. This method does not have required parameters. The optional parameters are  enterpriseId - Return inventory items belonging to that enterprise. If the caller context is an enterprise, this value will be taken from token itself. modifiedSince - Used to retrieve inventory items that have been modified in the last modifiedSince hours. with - an array containing the string \"edge\" to get details about details about the provisioned edge if any.  Privileges required:  `READ` `INVENTORY`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\AllApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\VcoInventoryGetInventoryItems(); // \Swagger\Client\Model\VcoInventoryGetInventoryItems | 
+
+try {
+    $result = $apiInstance->vcoInventoryGetInventoryItems($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AllApi->vcoInventoryGetInventoryItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\VcoInventoryGetInventoryItems**](../Model/VcoInventoryGetInventoryItems.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\VcoInventoryGetInventoryItemsResult**](../Model/VcoInventoryGetInventoryItemsResult.md)
 
 ### Authorization
 

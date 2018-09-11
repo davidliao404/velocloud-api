@@ -19,15 +19,18 @@ Method | HTTP request | Description
 [**enterpriseGetEnterpriseGatewayHandoff**](EnterpriseApi.md#enterpriseGetEnterpriseGatewayHandoff) | **POST** /enterprise/getEnterpriseGatewayHandoff | Get enterprise gateway handoff configuration
 [**enterpriseGetEnterpriseNetworkAllocation**](EnterpriseApi.md#enterpriseGetEnterpriseNetworkAllocation) | **POST** /enterprise/getEnterpriseNetworkAllocation | Get an enterprise network allocation
 [**enterpriseGetEnterpriseNetworkAllocations**](EnterpriseApi.md#enterpriseGetEnterpriseNetworkAllocations) | **POST** /enterprise/getEnterpriseNetworkAllocations | Get all network allocation objects defined on an enterprise
+[**enterpriseGetEnterpriseProperty**](EnterpriseApi.md#enterpriseGetEnterpriseProperty) | **POST** /enterprise/getEnterpriseProperty | Get enterprise property
 [**enterpriseGetEnterpriseRouteConfiguration**](EnterpriseApi.md#enterpriseGetEnterpriseRouteConfiguration) | **POST** /enterprise/getEnterpriseRouteConfiguration | Get route advertisement and routing preferences policy
 [**enterpriseGetEnterpriseRouteTable**](EnterpriseApi.md#enterpriseGetEnterpriseRouteTable) | **POST** /enterprise/getEnterpriseRouteTable | Get the enterprise route table
 [**enterpriseGetEnterpriseServices**](EnterpriseApi.md#enterpriseGetEnterpriseServices) | **POST** /enterprise/getEnterpriseServices | Get enterprise network service detail
 [**enterpriseInsertEnterprise**](EnterpriseApi.md#enterpriseInsertEnterprise) | **POST** /enterprise/insertEnterprise | Insert a new enterprise
 [**enterpriseInsertEnterpriseNetworkAllocation**](EnterpriseApi.md#enterpriseInsertEnterpriseNetworkAllocation) | **POST** /enterprise/insertEnterpriseNetworkAllocation | Insert an enterprise network allocation
+[**enterpriseInsertEnterpriseNetworkSegment**](EnterpriseApi.md#enterpriseInsertEnterpriseNetworkSegment) | **POST** /enterprise/insertEnterpriseNetworkSegment | Insert an enterprise network segment
 [**enterpriseInsertEnterpriseService**](EnterpriseApi.md#enterpriseInsertEnterpriseService) | **POST** /enterprise/insertEnterpriseService | Insert a new enterprise service
 [**enterpriseInsertOrUpdateEnterpriseAlertConfigurations**](EnterpriseApi.md#enterpriseInsertOrUpdateEnterpriseAlertConfigurations) | **POST** /enterprise/insertOrUpdateEnterpriseAlertConfigurations | Insert, update, or delete enterprise alert configurations
 [**enterpriseInsertOrUpdateEnterpriseCapability**](EnterpriseApi.md#enterpriseInsertOrUpdateEnterpriseCapability) | **POST** /enterprise/insertOrUpdateEnterpriseCapability | Insert or update an enterprise capability
 [**enterpriseInsertOrUpdateEnterpriseGatewayHandoff**](EnterpriseApi.md#enterpriseInsertOrUpdateEnterpriseGatewayHandoff) | **POST** /enterprise/insertOrUpdateEnterpriseGatewayHandoff | Insert or update an enterprise gateway handoff configuration
+[**enterpriseInsertOrUpdateEnterpriseProperty**](EnterpriseApi.md#enterpriseInsertOrUpdateEnterpriseProperty) | **POST** /enterprise/insertOrUpdateEnterpriseProperty | Insert or update an enterprise property
 [**enterpriseSetEnterpriseAllAlertRecipients**](EnterpriseApi.md#enterpriseSetEnterpriseAllAlertRecipients) | **POST** /enterprise/setEnterpriseAllAlertsRecipients | Set the recipients who should receive all alerts for an enterprise
 [**enterpriseUpdateEnterprise**](EnterpriseApi.md#enterpriseUpdateEnterprise) | **POST** /enterprise/updateEnterprise | Update an enterprise
 [**enterpriseUpdateEnterpriseNetworkAllocation**](EnterpriseApi.md#enterpriseUpdateEnterpriseNetworkAllocation) | **POST** /enterprise/updateEnterpriseNetworkAllocation | Update an enterprise network allocation
@@ -772,6 +775,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseGetEnterpriseProperty**
+> \Swagger\Client\Model\EnterpriseGetEnterprisePropertyResult enterpriseGetEnterpriseProperty($body)
+
+Get enterprise property
+
+Get a enterprise property by object id or other attribute.  Privileges required:  `READ` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\EnterpriseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseGetEnterpriseProperty(); // \Swagger\Client\Model\EnterpriseGetEnterpriseProperty | 
+
+try {
+    $result = $apiInstance->enterpriseGetEnterpriseProperty($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnterpriseApi->enterpriseGetEnterpriseProperty: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseGetEnterpriseProperty**](../Model/EnterpriseGetEnterpriseProperty.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseGetEnterprisePropertyResult**](../Model/EnterpriseGetEnterprisePropertyResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseGetEnterpriseRouteConfiguration**
 > \Swagger\Client\Model\EnterpriseGetEnterpriseRouteConfigurationResult enterpriseGetEnterpriseRouteConfiguration($body)
 
@@ -1017,6 +1069,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enterpriseInsertEnterpriseNetworkSegment**
+> \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegmentResult enterpriseInsertEnterpriseNetworkSegment($body)
+
+Insert an enterprise network segment
+
+Insert a new enterprise network segment.  Privileges required:  `CREATE` `NETWORK_ALLOCATION`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\EnterpriseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment(); // \Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment | 
+
+try {
+    $result = $apiInstance->enterpriseInsertEnterpriseNetworkSegment($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnterpriseApi->enterpriseInsertEnterpriseNetworkSegment: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegment**](../Model/EnterpriseInsertEnterpriseNetworkSegment.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseInsertEnterpriseNetworkSegmentResult**](../Model/EnterpriseInsertEnterpriseNetworkSegmentResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **enterpriseInsertEnterpriseService**
 > \Swagger\Client\Model\EnterpriseInsertEnterpriseServiceResult enterpriseInsertEnterpriseService($body)
 
@@ -1201,6 +1302,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseGatewayHandoffResult**](../Model/EnterpriseInsertOrUpdateEnterpriseGatewayHandoffResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **enterpriseInsertOrUpdateEnterpriseProperty**
+> \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterprisePropertyResult enterpriseInsertOrUpdateEnterpriseProperty($body)
+
+Insert or update an enterprise property
+
+Insert a enterprise property. If property with the given name already exists, the property will be updated.  Privileges required:  `READ` `ENTERPRISE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\EnterpriseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty(); // \Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty | 
+
+try {
+    $result = $apiInstance->enterpriseInsertOrUpdateEnterpriseProperty($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnterpriseApi->enterpriseInsertOrUpdateEnterpriseProperty: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\EnterpriseInsertOrUpdateEnterpriseProperty**](../Model/EnterpriseInsertOrUpdateEnterpriseProperty.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\EnterpriseInsertOrUpdateEnterprisePropertyResult**](../Model/EnterpriseInsertOrUpdateEnterprisePropertyResult.md)
 
 ### Authorization
 
