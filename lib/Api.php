@@ -56,7 +56,7 @@ class Api {
 			'cookies' => $jar
 		]);
 		
-		error_log("Logging into Velocloud Orchestrator:$url with username:$username and password:$password");
+		error_log("Logging into Velocloud Orchestrator from API with URL:$url with username:$username and password:$password");
 
 		$result = $client->post('login/enterpriseLogin',[
 			'body' => json_encode([ 'username' => $username, 'password' => $password])
@@ -66,8 +66,8 @@ class Api {
 		
 		$velocloudSession = $jar->getCookieByName('velocloud.session');
 		$velocloudMessage = $jar->getCookieByName('velocloud.message');
-		error_log(print_r($jar,1));
-		error_log(print_r($result,1));
+		//error_log(print_r($jar,1));
+		//error_log(print_r($result,1));
 		
 		if ($velocloudSession) {
 			
