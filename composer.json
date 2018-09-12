@@ -20,6 +20,6 @@
         "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
-        "psr-4": { "Velocloud\\" : "lib/" }
+        "psr-4": { "Velocloud\\Api" : "lib/" }
     },
 }
