@@ -36,12 +36,14 @@ class Api {
         if ($this->config['loginMethod'] === 'enterprise') { $this->enterpriseLogin(); }
     }
     
+    
+    
     /****************************************
      * Function: enterpriseLogin()
      * API Method: login/enterpriseLogin
      ****************************************/
 
-    private function enterpriseLogin() {
+    public function enterpriseLogin() {
 
 		$config = $this->config;
         
@@ -56,7 +58,7 @@ class Api {
 			'cookies' => $jar
 		]);
 		
-		error_log("Logging into Velocloud Orchestrator from API with URL:$url with username:$username and password:$password");
+		error_log("Logging into Velocloud Orchestrator:$url with username:$username and password:$password");
 
 		$result = $client->post('login/enterpriseLogin',[
 			'body' => json_encode([ 'username' => $username, 'password' => $password])
@@ -66,13 +68,14 @@ class Api {
 		
 		$velocloudSession = $jar->getCookieByName('velocloud.session');
 		$velocloudMessage = $jar->getCookieByName('velocloud.message');
-		//error_log(print_r($jar,1));
-		//error_log(print_r($result,1));
 		
 		if ($velocloudSession) {
 			
 			$this->cookies = $jar;
             $this->client = $client;
+            $enterpriseData = $this->enterpriseGetEnterprise();
+            
+            $this->enterpriseId = $enterpriseData->result->id ? $enterpriseData->result->id : false;
 			error_log("Logged into Velocloud successfully with session: $velocloudSession");
             return($client);
 		}
@@ -87,17 +90,77 @@ class Api {
      * API Method: enterprise/getEnterprise
      ****************************************/
 
-    private function enterpriseGetEnterprise() {
+    public function enterpriseGetEnterprise() {
     
         $client = $this->client ? $this->client : $this->enterpriseLogin();
         
         $requestBody = [
 			"jsonrpc"	=> "2.0",
-			"method" 	=> "enterprise/getEnterprise"
+			"method" 	=> "enterprise/getEnterprise",
+            "id"        => 1
 		];
 		
         $data = $this->apiFetch($requestBody);
-        error_log(print_r($data));
+        if ($this->debug) { error_log("Enterprise data: ".print_r($data,1)); }
+        return($data);
+    }
+    
+    /****************************************
+     * Function: enterpriseGetEnterpriseEdges()
+     * API Method: enterprise/getEnterpriseEdges
+     ****************************************/
+
+    public function enterpriseGetEnterpriseEdges($args) {
+        
+        $client = $this->client ? $this->client : $this->enterpriseLogin();
+        
+        $params = [
+            "with" => ["site", "configuration", "recentLinks", "cloudServiceSiteStatus", "vnfs"]
+        ];
+        
+        $requestBody = [
+			"jsonrpc"	=> "2.0",
+			"method" 	=> "enterprise/getEnterpriseEdges",
+            "id"        => $this->enterpriseId,
+            "params"    => $params
+		];
+		
+        $data = $this->apiFetch($requestBody);
+        
+        if ($this->debug) { error_log("Enterprise Edge Data: ".print_r($data,1)); }
+        return($data->result);
+        
+    }
+    
+    
+    /****************************************
+     * Function: getLinkQualityEvents()
+     * API Method: enterprise/getEnterprise
+     ****************************************/
+
+    public function getLinkQualityEvents($args) {
+        
+    
+        $client = $this->client ? $this->client : $this->enterpriseLogin();
+        
+        $params = [
+			"maxSamples" 	=> isset($args['maxSamples'])   ? $args['maxSamples'] : 60,
+			"interval" 		=> isset($args['interval'])     ? $args['interval'] : [ "start" => (int) (time()-86400)],
+			"edgeId"		=> isset($args['edgeId'])       ? (int) $args['edgeId'] : false,
+			"enterpriseId"	=> isset($args['enterpriseId']) ? $args['enterpriseId'] : $this->enterpriseId
+		];
+        
+        $requestBody = [
+			"jsonrpc"	=> "2.0",
+			"method" 	=> "linkQualityEvent/getLinkQualityEvents",
+            "id"        => 1,
+            "params"    => $params
+		];
+		
+        // error_log("Sending getLinkQualityEvents() with data:".print_r($requestBody,1));
+        
+        $data = $this->apiFetch($requestBody);
+        if ($this->debug) { error_log("Enterprise data: ".print_r($data,1)); }
         return($data);
     }
     
@@ -106,18 +169,20 @@ class Api {
      * API Method: metrics/getEdgeLinkSeries
      ****************************************/
 
-    private function metricsGetEdgeLinkSeries($args) { 
+    public function metricsGetEdgeLinkSeries($args) { 
 		
 		$client = $this->client ? $this->client : $this->enterpriseLogin();
-		$startTicks = $start * 1000;				// Convert to millisecond ticks
+        
 		$params = [
 			"metrics" 		=> isset($args['metrics'])  ? $args['metrics'] : ["bpsRx", "bpsTx", "bytesTx", "bpsOfBestPathTx", "bytesRx", "bpsOfBestPathRx"],
-			"links"			=> isset($args['links'])    ? $args['links'] : [],
-			"edgeId"		=> isset($args['edgeId'])   ? $args['edgeId'] : false,
+			"links"			=> isset($args['links'])    ? $args['links'] : false,
+			"edgeId"		=> isset($args['edgeId'])   ? (int) $args['edgeId'] : false,
 			"interval" 		=> isset($args['interval'])     ? $args['interval'] : [ "start" => (int) (time()-86400)],
 			"enterpriseId"	=> isset($args['enterpriseId']) ? $args['enterpriseId'] : $this->enterpriseId
 		];
 		
+        if (!$params['links']) { unset($params['links']);}
+        
 		$requestBody = [
 			"jsonrpc"	=> "2.0",
 			"method" 	=> "metrics/getEdgeLinkSeries",
@@ -156,7 +221,7 @@ class Api {
     private function apiFetch($requestBody) { 
 		
 		$jsonParams = json_encode($requestBody, JSON_UNESCAPED_SLASHES);
-		$result = $client->post('/portal/',[
+		$result = $this->client->post('/portal/',[
 			'body' => json_encode($requestBody)
 		]);	
 		
