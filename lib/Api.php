@@ -26,7 +26,7 @@ class Api {
         // Defaults
         
         $this->config['loginMethod'] = 'enterprise';
-    
+        $this->debug = 1;    
         foreach (['url','username','password'] as $arg) { 
             if (isset($args[$arg])) { $this->config[$arg] = $args[$arg]; }
             else                    { throw new Exception('Velocloud\Api() requires arg "$arg".'); }
@@ -101,7 +101,7 @@ class Api {
 		];
 		
         $data = $this->apiFetch($requestBody);
-        if ($this->debug) { error_log("Enterprise data: ".print_r($data,1)); }
+        if (isset($this->debug) && ($this->debug)) { error_log("Enterprise data: ".print_r($data,1)); }
         return($data);
     }
     
@@ -124,10 +124,10 @@ class Api {
             "id"        => $this->enterpriseId,
             "params"    => $params
 		];
-		
+		print "Fetching data with apiFetch()...";
         $data = $this->apiFetch($requestBody);
         
-        if ($this->debug) { error_log("Enterprise Edge Data: ".print_r($data,1)); }
+        if (isset($this->debug) && ($this->debug)) { error_log("Enterprise Edge Data: ".print_r($data,1)); }
         return($data->result);
         
     }
@@ -141,11 +141,13 @@ class Api {
     public function getLinkQualityEvents($args) {
         
     
+        if (isset($this->debug) && ($this->debug)) { error_log("Checking for enterprise login..."); }
         $client = $this->client ? $this->client : $this->enterpriseLogin();
+        if (isset($this->debug) && ($this->debug)) { error_log("Done."); }
         
         $params = [
-			"maxSamples" 	=> isset($args['maxSamples'])   ? $args['maxSamples'] : 60,
-			"interval" 		=> isset($args['interval'])     ? $args['interval'] : [ "start" => (int) (time()-86400)],
+			"maxSamples" 	=> isset($args['maxSamples'])   ? $args['maxSamples'] : 200,
+			"interval" 		=> isset($args['interval'])     ? $args['interval'] : [ "start" => (int) (time() * 1000) - 86400000],
 			"edgeId"		=> isset($args['edgeId'])       ? (int) $args['edgeId'] : false,
 			"enterpriseId"	=> isset($args['enterpriseId']) ? $args['enterpriseId'] : $this->enterpriseId
 		];
@@ -157,10 +159,10 @@ class Api {
             "params"    => $params
 		];
 		
-        // error_log("Sending getLinkQualityEvents() with data:".print_r($requestBody,1));
+        if (isset($this->debug) && ($this->debug)) {  error_log("Sending getLinkQualityEvents() with data:".print_r($requestBody,1)); }
         
         $data = $this->apiFetch($requestBody);
-        if ($this->debug) { error_log("Enterprise data: ".print_r($data,1)); }
+        if (isset($this->debug) && ($this->debug)) { error_log("Link Quality data: ".print_r($data,1)); }
         return($data);
     }
     
